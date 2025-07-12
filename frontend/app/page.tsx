@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, Github, Zap, Target, Users, CheckCircle, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -22,6 +23,14 @@ const staggerContainer = {
 }
 
 export default function HomePage() {
+  const [repoUrl, setRepoUrl] = useState("")
+
+  const handleSubmit = () => {
+    // You can handle the repo submission here
+    console.log("Repo URL:", repoUrl)
+    // Add your logic: call an API, redirect, etc.
+  }
+
   return (
     <div className="min-h-screen bg-white text-black">
       <Header />
@@ -57,12 +66,31 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
           >
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg">
-              Try Code2Pitch Free
+            <input
+              type="url"
+              placeholder="https://github.com/username/repo"
+              value={repoUrl}
+              onChange={(e) => setRepoUrl(e.target.value)}
+              className="px-6 py-2 border border-black rounded-lg w-full sm:w-96 text-lg focus:outline-none focus:border-black"
+            />
+            <Button
+              size="lg"
+              onClick={handleSubmit}
+              className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg"
+            >
+              Generate Pitch
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          >
             <Button
               variant="outline"
               size="lg"
@@ -99,9 +127,8 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-black text-white">
+       {/* Stats Section */}
+       <section className="py-20 bg-black text-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             variants={staggerContainer}
@@ -320,6 +347,7 @@ export default function HomePage() {
         </div>
       </section>
 
+     
       <Footer />
     </div>
   )
