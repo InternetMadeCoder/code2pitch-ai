@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { generatePitch } from "../services/generatePitch";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -24,17 +25,27 @@ const staggerContainer = {
 
 export default function HomePage() {
   const [repoUrl, setRepoUrl] = useState("")
+  const [result, setResult] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = () => {
-    // You can handle the repo submission here
-    console.log("Repo URL:", repoUrl)
-    // Add your logic: call an API, redirect, etc.
-  }
+  const handleSubmit = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    setLoading(true);
+    setError("");
+    setResult(null);
+    try {
+      const data = await generatePitch(repoUrl);
+      setResult(data);
+    } catch (err) {
+      setError("Could not generate pitch. Please try again.");
+    }
+    setLoading(false);
+  };
 
   return (
     <div className="min-h-screen bg-white text-black">
       <Header />
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -62,28 +73,39 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
-          >
-            <input
-              type="url"
-              placeholder="https://github.com/username/repo"
-              value={repoUrl}
-              onChange={(e) => setRepoUrl(e.target.value)}
-              className="px-6 py-2 border border-black rounded-lg w-full sm:w-96 text-lg focus:outline-none focus:border-black"
-            />
-            <Button
-              size="lg"
-              onClick={handleSubmit}
-              className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg"
-            >
-              Generate Pitch
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </motion.div>
+          <form onSubmit={handleSubmit}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <input
+                type="url"
+                placeholder="https://github.com/username/repo"
+                value={repoUrl}
+                onChange={(e) => setRepoUrl(e.target.value)}
+                className="px-6 py-2 border border-black rounded-lg w-full sm:w-96 text-lg focus:outline-none focus:border-black"
+              />
+              <Button
+                size="lg"
+                type="submit"
+                disabled={loading}
+                className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg"
+              >
+                {loading ? "Generating..." : "Generate Pitch"}
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+          </form>
+          {error && <p className="text-red-600 text-center mt-2">{error}</p>}
+          {result && (
+            <div className="max-w-4xl w-full mx-auto mt-8 bg-white border border-black rounded-lg p-8 shadow">
+              <h2 className="text-2xl font-bold mb-2">Summary</h2>
+              <p className="mb-4">{result.summary}</p>
+              <h2 className="text-2xl font-bold mb-2">Elevator Pitch</h2>
+              <p className="mb-4">{result.elevator_pitch}</p>
+              <h2 className="text-2xl font-bold mb-2">Demo Script</h2>
+              <p className="mb-4">{result.demo_script}</p>
+              <h2 className="text-2xl font-bold mb-2">Tagline</h2>
+              <p>{result.tagline}</p>
+            </div>
+          )}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

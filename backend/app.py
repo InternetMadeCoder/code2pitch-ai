@@ -7,6 +7,9 @@ load_dotenv()
 
 app = Flask(__name__)
 
+from flask_cors import CORS
+CORS(app)
+
 HUGGINGFACE_API_TOKEN = os.getenv("HF_API_KEY")  
 HUGGINGFACE_MODEL = "sshleifer/distilbart-cnn-12-6"
 
