@@ -75,22 +75,22 @@ export default function HomePage() {
 
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <input
-                type="url"
-                placeholder="https://github.com/username/repo"
-                value={repoUrl}
-                onChange={(e) => setRepoUrl(e.target.value)}
-                className="px-6 py-2 border border-black rounded-lg w-full sm:w-96 text-lg focus:outline-none focus:border-black"
-              />
-              <Button
-                size="lg"
+            <input
+              type="url"
+              placeholder="https://github.com/username/repo"
+              value={repoUrl}
+              onChange={(e) => setRepoUrl(e.target.value)}
+              className="px-6 py-2 border border-black rounded-lg w-full sm:w-96 text-lg focus:outline-none focus:border-black"
+            />
+            <Button
+              size="lg"
                 type="submit"
                 disabled={loading}
-                className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg"
-              >
+              className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg"
+            >
                 {loading ? "Generating..." : "Generate Pitch"}
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
             </div>
           </form>
           {error && <p className="text-red-600 text-center mt-2">{error}</p>}
