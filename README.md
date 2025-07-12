@@ -40,7 +40,7 @@ Just enter a GitHub repo URL and get a polished pitch in seconds!
 
 ## 🔍 Demo
 
-[🔗 Live Demo Coming Soon](#)
+https://code2pitch-ai.vercel.app/
 
 ![demo](./assets/code2pitch-demo.gif)
 
