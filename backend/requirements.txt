@@ -1,7 +1,10 @@
-fastapi
+flask
 uvicorn
 python-dotenv
 httpx
-openai
-python-multipart
 pydantic
+python-multipart
+requests
+aiohttp
+transformers
+torch
