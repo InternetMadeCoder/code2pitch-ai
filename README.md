@@ -5,7 +5,7 @@
 ![Next.js](https://img.shields.io/badge/Frontend-Next.js-blue?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue?logo=typescript)
 ![Python](https://img.shields.io/badge/Backend-Python-yellow?logo=python)
-![FastAPI](https://img.shields.io/badge/API-FastAPI-0eb7b3?logo=fastapi)
+![Flask](https://img.shields.io/badge/API-Flask-000000?logo=flask)
 
 
 ---
