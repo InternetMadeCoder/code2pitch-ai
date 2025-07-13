@@ -163,17 +163,3 @@ Please open an issue or submit a PR.
 ---
 
 ### “Your code deserves the spotlight. Let Code2Pitch be your voice.”
-
-✅ You can use this directly in your GitHub repo.  
-Let me know if you'd also like:
-
-- `requirements.txt` for Flask backend  
-- `main.py` Flask  
-- Example frontend form using `fetch`
-
-I can generate those next.
-
----
-
-
-
