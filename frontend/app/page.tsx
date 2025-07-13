@@ -108,22 +108,6 @@ export default function HomePage() {
           )}
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg bg-transparent"
-            >
-              <Github className="mr-2 w-5 h-5" />
-              View Demo
-            </Button>
-          </motion.div>
-
-          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
