@@ -135,7 +135,7 @@ AI: OpenAI/Gemini, LangChain (LLM APIs)
 
 Parsing: GitHub API, Markdown parsing, optional AST tools
 
-Deployment: Vercel (frontend), Render/Fly.io/Heroku (backend)
+Deployment: Vercel (frontend), Render (backend)
 
 ---
 ### 🛣️ Roadmap
@@ -167,8 +167,8 @@ Please open an issue or submit a PR.
 ✅ You can use this directly in your GitHub repo.  
 Let me know if you'd also like:
 
-- `requirements.txt` for FastAPI backend  
-- `main.py` FastAPI starter  
+- `requirements.txt` for Flask backend  
+- `main.py` Flask  
 - Example frontend form using `fetch`
 
 I can generate those next.
