@@ -162,11 +162,6 @@ Please open an issue or submit a PR.
 
 ---
 
-### 📄 License
-This project is licensed under the MIT License.
-
----
-
 ### “Your code deserves the spotlight. Let Code2Pitch be your voice.”
 
 ✅ You can use this directly in your GitHub repo.  
