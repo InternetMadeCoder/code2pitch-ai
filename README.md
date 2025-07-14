@@ -5,7 +5,7 @@
 ![Next.js](https://img.shields.io/badge/Frontend-Next.js-blue?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue?logo=typescript)
 ![Python](https://img.shields.io/badge/Backend-Python-yellow?logo=python)
-![FastAPI](https://img.shields.io/badge/API-FastAPI-0eb7b3?logo=fastapi)
+![Flask](https://img.shields.io/badge/API-Flask-000000?logo=flask)
 
 
 ---
@@ -135,7 +135,7 @@ AI: OpenAI/Gemini, LangChain (LLM APIs)
 
 Parsing: GitHub API, Markdown parsing, optional AST tools
 
-Deployment: Vercel (frontend), Render/Fly.io/Heroku (backend)
+Deployment: Vercel (frontend), Render (backend)
 
 ---
 ### 🛣️ Roadmap
@@ -162,23 +162,4 @@ Please open an issue or submit a PR.
 
 ---
 
-### 📄 License
-This project is licensed under the MIT License.
-
----
-
 ### “Your code deserves the spotlight. Let Code2Pitch be your voice.”
-
-✅ You can use this directly in your GitHub repo.  
-Let me know if you'd also like:
-
-- `requirements.txt` for FastAPI backend  
-- `main.py` FastAPI starter  
-- Example frontend form using `fetch`
-
-I can generate those next.
-
----
-
-
-
