@@ -8,7 +8,7 @@ load_dotenv()
 app = Flask(__name__)
 
 from flask_cors import CORS
-CORS(app, origins=["https://code2pitch-ai.vercel.app", "http://localhost:4000"])
+CORS(app, origins=["https://code2pitch-ai.vercel.app", "http://localhost:4000", "http://localhost:3000"])
 
 HUGGINGFACE_API_TOKEN = os.getenv("HF_API_KEY")
 HUGGINGFACE_MODEL = "sshleifer/distilbart-cnn-12-6"
